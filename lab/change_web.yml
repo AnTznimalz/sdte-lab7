@@ -1,0 +1,26 @@
+- hosts: host01
+  tasks:
+  - name: "change html in 8081"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: 'World'
+        replace: 'A:8081'
+        backup: yes
+
+- hosts: host02
+  tasks:
+  - name: "change html in 8082"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: 'World'
+        replace: 'B:8082'
+        backup: yes
+
+- hosts: host03
+  tasks:
+  - name: "change html in 8083"
+    replace: 
+        path: /var/www/default/index.html
+        regexp: 'World'
+        replace: 'C:8083'
+        backup: yes
